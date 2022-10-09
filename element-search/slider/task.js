@@ -5,12 +5,12 @@ const sliderItem = Array.from(document.querySelectorAll('.slider__item'));
 let slide = 0;
 
 sliderPrev.onclick = () => {
-    slide++;
+    slide--;
     showSlide(slide);
 }
 
 sliderNext.onclick = () => {
-    slide--;
+    slide++;
     showSlide(slide);
 }
 
