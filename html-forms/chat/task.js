@@ -71,12 +71,9 @@ function delayRobotMessage() {
 
 input.addEventListener('keydown', (e) => {
     delayRobotMessage();
-
-    if (e.key === 'Enter') {  
-        if (this.value !== "") {
-            printUserMessage();
-            robotMessage();
-        }
+    if (e.key === 'Enter' && input.value.trim() !== "") {
+        printUserMessage();
+        robotMessage();
     }
 })
 
