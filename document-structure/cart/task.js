@@ -20,7 +20,7 @@ let addToCard = function(elem_id, elem_img, elem_count) {
 };
 
 product.forEach((elem) => {
-    // elem.addEventListener('click', function() {
+    //elem.addEventListener('click', function() {
 
     let productAdd = elem.querySelector('.product__quantity-control_inc');
     let productRemove = elem.querySelector('.product__quantity-control_dec');
