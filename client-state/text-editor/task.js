@@ -1,17 +1,14 @@
-const editor = document.getElementById('editor');
-const clearBtn = document.querySelector('button');
+const dataText = document.getElementById('editor');
+let previousText = localStorage.getItem('dataText');
 
-document.addEventListener("DOMContentLoaded", (e) => {
-  if (localStorage.text !== null) {
-    editor.value = localStorage.text;
-  }
+dataText.value = previousText;
+dataText.addEventListener('keyup', dataText_OnKeyUp);
 
-  editor.addEventListener('change', (e) => {
-  localStorage.setItem('text', editor.value)
-  });
-});
+function dataText_OnKeyUp(e) {
+	localStorage.setItem('dataText', this.value);
+}
 
-clearBtn.addEventListener('click', (e) => {
-  localStorage.removeItem('text');
-  editor.value = null;
+clearBtn.addEventListener("click", function () {
+	dataText.value = "";
+	localStorage.removeItem("dataText");
 });
